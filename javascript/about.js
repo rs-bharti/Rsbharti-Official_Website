@@ -185,10 +185,10 @@ document.addEventListener("DOMContentLoaded", () => {
     "images/mem6.jpg",
     "images/mem7.jpg",
     "images/mem8.jpg",
-    "images/mem9.jpg",
-    "images/mem10.jpg",
-    "images/mem11.jpg",
-    "images/mem12.jpg"
+    "images/mem9.jpeg",
+    "images/mem10.jpeg",
+    "images/mem11.jpeg",
+    "images/mem12.jpeg"
   ];
 
   const track = document.getElementById("hexTrack");

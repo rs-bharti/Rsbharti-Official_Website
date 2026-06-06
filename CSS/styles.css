@@ -788,7 +788,7 @@
   margin-top: 20px;
 }
 
-.buy-section h3 {
+.buy-section h2 {
   font-size: 18px;
   font-weight: 1100;
   color: #fff;
@@ -806,8 +806,8 @@
 }
 
 .buy-icon {
-  width: 44px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   object-fit: contain;
   border-radius: 10px;
   transition: all 0.3s ease;
