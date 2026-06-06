@@ -196,6 +196,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let sliding = false;
 
   const mod = (n, m) => ((n % m) + m) % m;
+  const sizes = ["small", "medium", "large", "medium"];
+  const rel = [-2, -1, 0, +1];
 
   function createOct(src, sizeClass) {
     const li = document.createElement("li");
@@ -209,18 +211,15 @@ document.addEventListener("DOMContentLoaded", () => {
     return li;
   }
 
-  function initOct() {
+  function renderTrack() {
     if (!track) return;
     track.innerHTML = "";
-    const sizes = ["small", "medium", "large", "medium"];
-    const rel = [-2, -1, 0, +1];
-
     for (let i = 0; i < sizes.length; i++) {
       const idx = mod(centerIdx + rel[i], sources.length);
       track.appendChild(createOct(sources[idx], sizes[i]));
     }
   }
-  initOct();
+  renderTrack();
 
   function slideNext() {
     if (!track || sliding) return;
@@ -244,24 +243,9 @@ document.addEventListener("DOMContentLoaded", () => {
       () => {
         track.style.transition = "none";
         track.style.transform = "translateX(0)";
-        track.appendChild(first);
 
         centerIdx = mod(centerIdx + 1, sources.length);
-        const kids = track.children;
-
-        if (kids.length >= 4) {
-          setTimeout(() => {
-            kids[0].className = "oct small";
-            kids[1].className = "oct medium";
-            kids[2].className = "oct large";
-            kids[3].className = "oct medium";
-
-            kids[0].querySelector("img").src = sources[mod(centerIdx - 2, sources.length)];
-            kids[1].querySelector("img").src = sources[mod(centerIdx - 1, sources.length)];
-            kids[2].querySelector("img").src = sources[mod(centerIdx, sources.length)];
-            kids[3].querySelector("img").src = sources[mod(centerIdx + 1, sources.length)];
-          }, 100);
-        }
+        renderTrack();
 
         void track.offsetWidth;
         sliding = false;
