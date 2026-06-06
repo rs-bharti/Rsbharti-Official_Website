@@ -1,0 +1,17 @@
+# Enable Rewrite Engine
+RewriteEngine On
+
+# Redirect (www OR http) -> https://rsbharti.com (single-step redirect)
+RewriteCond %{HTTP_HOST} !^rsbharti\.com$ [NC,OR]
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://rsbharti.com/$1 [L,R=301]
+
+# Set default index file
+DirectoryIndex index.html
+
+# Optional: Disable default "Coming Soon" files
+<FilesMatch "^(default|comingsoon)\.html$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+

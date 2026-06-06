@@ -1,0 +1,298 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+  
+
+  body {
+      background-color: #eee;
+      font-family: Arial, sans-serif;
+    }
+
+.contact-header {
+  position: relative;
+  text-align: center;
+  overflow: hidden; /* hide overflow from wave */
+}
+
+.contact-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.contact-header p {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #f0f0f0;
+}
+
+.header {
+  position: relative;
+  background: url('../images/contact_image.jpg') no-repeat center center/cover;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.wave {
+  position: absolute;
+  bottom: -1px; /* so it aligns perfectly */
+  left: 0;
+  width: 100%;
+  height: 60px; /* wave height */
+}
+
+/* ----------- Form Container ----------- */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 110vh;  /* full screen center */
+  background-color: #f0f0f0;
+  padding: 40px;
+}
+
+/* ----------- Form Page Wrapper ----------- */
+.formpage {
+  width: 100%;
+  max-width: 650px;  /* makes the form smaller */
+  background:#fff ;
+  padding: 30px 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+}
+
+/* ----------- Form Layout ----------- */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+/* ----------- Inputs ----------- */
+input, textarea {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 14px;
+  width: 100%;
+  background-color: #fafafa;
+  transition: border 0.3s;
+}
+
+input:focus, textarea:focus {
+  border-color: #ED3500;
+  outline: none;
+}
+
+textarea {
+  resize: none;
+  height: 90px;
+}
+
+/* ----------- Labels ----------- */
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* ----------- Button ----------- */
+.submit-btn {
+  background-color: #ED3500;
+  color: white;
+  font-size: 16px;
+  border: none;
+  padding: 12px;
+  border-radius: 25px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #c82d00;
+}
+    /*------------------------------------section------------------------------------/
+
+    /* -------------------------- Location ----------------------------------*/
+.info-section {
+  padding: 4%;
+  width: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+.info-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.info-header h2 {
+  font-size: 36px;
+  color: #ED3500;
+  margin-bottom: 10px;
+}
+
+.info-header p {
+  color: #666;
+  font-size: 16px;
+}
+
+.info-boxes {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding:auto ;
+}
+
+
+.info-box {
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  flex: 1;
+  max-width: 30%;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.icon {
+  background-color: #e0f7f7;
+  border-radius: 12px;
+  padding: 10px;
+  font-size: 24px;
+  color: #00b3b3;
+}
+
+.info-content h4 {
+  margin: 0 0 5px;
+  font-size: 18px;
+  color: #222;
+}
+
+.info-content p {
+  margin: 0;
+  color: #555;
+  font-size: 15px;
+}
+
+/* -------- MAP ---------------*/
+
+.map-wrapper {
+  position: relative;
+  padding: 60px 0;
+}
+.map-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 200px; /* start 50px lower */
+  left: 40px; /* space from left */
+  right: 40px; /* space from right */
+  height: calc(100% - 150px);
+  background-color: #d5eea2;
+  border-radius: 20px; /* rounded corners */
+  z-index: -1; /* keep behind map */
+}
+
+
+
+.map-section {
+  background-color: white; /* keep inside clean white */
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  border: 12px solid black; /* thick black frame */
+  border-radius: 20px; /* rounded corners */
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.map-section iframe {
+  width: 100%;
+  height: 400px;
+  display: block;
+}
+
+.btn-container {
+  text-align: center;
+  padding: 20px;
+  background-color: white; /* matches the inside */
+}
+
+.btn-container a {
+  color: #fff;
+  background-color: #124559;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+/* ---------------------Animation -------------------------*/
+
+@keyframes zoomFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+
+@media (max-width: 750px) and (min-width: 250px) {
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10% 3%;
+        gap: 60px;
+    }
+    .right {
+        flex: 1;
+        padding: 3%;
+    }
+
+  .info-section {
+    padding: 40px 10px; /* reduce padding */
+  }
+  .info-boxes {
+    padding: 10px 20px; /* reduce side padding */
+    flex-direction: column; /* stack vertically */
+    align-items: center; /* center align boxes */
+  }
+
+  .info-box {
+    max-width: 100%; /* take full width */
+    width: 100%;
+  }
+
+  .info-content h4 {
+    font-size: 16px;
+  }
+
+  .info-content p {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,130 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  margin-top: 10%;
+  background: #eee;
+}
+
+.faq-section {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.faq-section2 {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.faq-section h1 {
+  text-align: center;
+  color: #ED3500;
+  font-size: 2.2rem;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.faq-section p {
+  text-align: center;
+  color: black;
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
+
+.faq-section2 h1 {
+  text-align: center;
+  color: #ED3500;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+
+.faq-item {
+  border-bottom: 1px solid #eee;
+  margin-bottom: 15px;
+}
+
+.faq-question {
+  width: 100%;
+  padding: 15px;
+  background: white;
+  border: none;
+  outline: none;
+  text-align: left;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.faq-question:hover {
+  background: #f5f5f5;
+}
+
+.icon {
+  font-size: 1.5rem;
+  background: #ED3500;
+  color: white;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  background: #f0f0f0;
+  color: black;
+  font-size: 1rem;
+  padding: 0 15px;
+}
+
+.faq-answer p {
+  margin: 15px 0;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px;
+  padding: 10px 15px;
+}
+
+.faq-item.active .icon {
+  transform: rotate(45deg);
+}
+
+/* ✅ Responsive for 350px – 750px */
+@media screen and (max-width: 750px) and (min-width: 350px) {
+
+  .faq-section,
+  .faq-section2 {
+    width: 90%;          /* take 90% of screen */
+    margin: 12% auto;     /* center it with vertical spacing */
+    padding: 4%;         /* relative padding */
+  }
+  .icon {
+  font-size: 1.2rem;   /* controls the "+" sign itself */
+  width: 28px;         /* fixed circle width */
+  height: 28px;        /* fixed circle height */
+  min-width: 28px;     /* prevent shrinking */
+  min-height: 28px;    /* prevent shrinking */
+  background: #ED3500;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+}
